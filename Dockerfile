@@ -1,19 +1,21 @@
 FROM ubuntu:12.04
 
-MAINTAINER Mathias Lafeldt <mathias.lafeldt@gmail.com>
+MAINTAINER Jessica Stokes <hello@jessicastokes.net>
 
-ENV TOOLCHAIN_VERSION 417048470d3fb84f9ba974d0e5965c4cfcc1edda
+ENV TOOLCHAIN_VERSION 0e71649608a6fb9c58695de649aeb4f3353a0398
 
-ENV PS2DEV /ps2dev
-ENV PS2SDK $PS2DEV/ps2sdk
-ENV PATH   $PATH:$PS2DEV/bin:$PS2DEV/ee/bin:$PS2DEV/iop/bin:$PS2DEV/dvp/bin:$PS2SDK/bin
+ENV PSPDEV /pspdev
+ENV PSPSDK $PSPDEV/pspsdk
+ENV PATH   $PATH:$PSPDEV/bin:$PSPSDK/bin
 
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update \
     && apt-get upgrade -y \
-    && apt-get install -y autoconf bzip2 gcc git make patch vim wget zip \
-    && git clone git://github.com/ps2dev/ps2toolchain.git /toolchain \
+    && apt-get install -y g++ build-essential autoconf automake automake1.9 cmake doxygen bison flex libncurses5-dev libsdl1.2-dev libreadline-dev libusb-dev texinfo libgmp3-dev libmpfr-dev libelf-dev libmpc-dev libfreetype6-dev zlib1g-dev libtool subversion git tcl unzip wget \
+    && echo "dash dash/sh boolean false" | debconf-set-selections \
+    && dpkg-reconfigure --frontend=noninteractive dash \
+    && git clone https://github.com/pspdev/psptoolchain.git /toolchain \
     && cd /toolchain \
     && git checkout -qf $TOOLCHAIN_VERSION \
     && ./toolchain.sh \
