@@ -39,4 +39,4 @@ script: docker run -it --rm -v "$PWD:/src" ticky/pspdev make test
 
 ## Origin
 
-This project is forked from [Mathias Lafeldt](https://twitter.com/mlafeldt)'s [docker-ps2dev](https://github.com/mlafeldt/docker-pspdev).
+This project is forked from [Mathias Lafeldt](https://twitter.com/mlafeldt)'s [docker-ps2dev](https://github.com/mlafeldt/docker-ps2dev).
