@@ -1,4 +1,4 @@
-IMAGE := ticky/pspdev
+IMAGE := jkap/psvitadev
 
 build:
 	docker build --force-rm -t $(IMAGE) .
