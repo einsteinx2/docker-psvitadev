@@ -1,9 +1,9 @@
-# A Docker Image for PSP Development
+# A Docker Image for PS Vita Development
 
 [![](https://images.microbadger.com/badges/image/jkap/psvitadev.svg)](https://microbadger.com/images/jkap/psvitadev)
 [![](https://img.shields.io/docker/pulls/jkap/psvitadev.svg?maxAge=604800)](https://hub.docker.com/r/jkap/psvitadev/)
 
-Cross-compile your PSP homebrew projects inside a Docker container based on [psptoolchain](https://github.com/pspdev/psptoolchain).
+Cross-compile your PS Vita homebrew projects inside a Docker container based on [vdpm](https://github.com/vitasdk/vdpm).
 
 ## Quick Start
 
